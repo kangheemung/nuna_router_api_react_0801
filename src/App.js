@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Homepage from './page/Homepage.js';
+import AboutPage from './page/AboutPage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    //루트를 작성
+    //페이지 여러개 작성
+    //
+
+    return (
+        <div>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Homepage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;
